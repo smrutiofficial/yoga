@@ -5,9 +5,9 @@ const Header = () => {
     return (
         <div className='bg-sky-100 py-3'>
             <div className=' flex flex-row justify-between items-center max-w-7xl mx-auto'>
-                <div id='logo' className='font-bold text-3xl'>
+                <div id='logo' className='font-bold text-4xl text-blue-500'>
                     <Link to='/'>
-                        <h1>Yoga</h1>
+                        <h1>Yoga.</h1>
                     </Link>
                 </div>
                 <div id='menus' className='font-medium flex flex-row justify-between items-center gap-8 '>
@@ -24,8 +24,13 @@ const Header = () => {
                         <ul className='hover:text-red-300'>Courses</ul>
                     </Link>
                 </div>
-                <div id='sign'>
-                    <button className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded'>SignIn</button>
+                <div id='sign' className=''>
+                <Link to='/signin'>
+                    <button className='mx-2 border-2 border-blue-500 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded'>Sign In</button>
+                </Link>
+                <Link to='/signup'>
+                    <button className='border-2 border-blue-500 hover:bg-blue-700 hover:text-white text-blue-500 font-bold py-2 px-4 rounded'>Sign Up</button>
+                </Link>
                 </div>
             </div>
         </div>
