@@ -45,25 +45,25 @@ const Profile = () => {
           onChange={(e) => setImage(e.target.files[0])}
         // onClick={(e) => setImage(e.target.files[0])}
         />
-        <img src={currentUser.profilePicture}
+        <img src={formdata.profilePicture || currentUser.profilePicture}
           // onClick={() => fileRef.current.click()}
           onClick={() => fileRef.current.click()}
           alt='profile'
           className='h-28 w-28 self-center rounded-full object-cover'
         />
-<p className='text-center'>
-  {imageError ? (
-    <span className='text-red-700'>Error uploading image</span>
-  ) : (
-    imageper > 0 && imageper < 100 ? (
-      <span className=''>{`Uploading image...${imageper} '%'`}</span>
-    ) : imageper === 100 ? (
-      <span className='text-green-700'>Image Uploaded successfully</span>
-    ) : ""
-  )}
-</p>
+        <p className='text-center'>
+          {imageError ? (
+            <span className='text-red-700'>Error uploading image</span>
+          ) : (
+            imageper > 0 && imageper < 100 ? (
+              <span className=''>{`Uploading image...${imageper} '%'`}</span>
+            ) : imageper === 100 ? (
+              <span className='text-green-700'>Image Uploaded successfully</span>
+            ) : ""
+          )}
+        </p>
 
- 
+
         <input type='text'
           id='username'
           placeholder='Username'
