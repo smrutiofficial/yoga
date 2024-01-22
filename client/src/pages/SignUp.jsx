@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const SignUp = () => {
   const [formData, setFormData] = useState({});
   const [error, setError] = useState(false);
   const [loading, setLoading] = useState(false);
+  const navigate = useNavigate();
+
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.id]: e.target.value });
@@ -23,10 +25,11 @@ const SignUp = () => {
       const data = await res.json();
       // console.log(data);
       setLoading(false);
-      if (data.success ==false) {
+      if (data.success == false) {
         setError(true);
         return;
       }
+      navigate('/signin');
     } catch (error) {
       setLoading(false);
       setError(true);
@@ -35,7 +38,7 @@ const SignUp = () => {
 
   return (
     <div className='p-3 max-w-lg mx-auto'>
-      <h1 className='text-center text-5xl my-7 font-semibold text-slate-500'>Registation</h1>
+      <h1 className='text-center text-5xl my-7 font-semibold text-slate-500'>Sign Up</h1>
       <form onSubmit={handleSubmit} className='flex flex-col gap-4 mt-10'>
         <input
           type='text'
