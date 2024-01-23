@@ -46,6 +46,7 @@ const SignUp = () => {
           type='text'
           placeholder='Username'
           id='username'
+          autocomplete="off"
           className='bg-state-100 p-3 rounded-lg'
           onChange={handleChange}
         />
@@ -53,6 +54,7 @@ const SignUp = () => {
           type='text'
           placeholder='Eamil'
           id='email'
+          autocomplete="off"
           className='bg-state-100 p-3 rounded-lg'
           onChange={handleChange}
         />
@@ -60,6 +62,7 @@ const SignUp = () => {
           type='Password'
           placeholder='Password'
           id='password'
+          autocomplete="off"
           className='bg-state-100 p-3 rounded-lg'
           onChange={handleChange}
         />
